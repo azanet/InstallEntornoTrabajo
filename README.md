@@ -17,7 +17,7 @@ también cuenta con scripts personalizados
 
 
 
-CARPETAS/ARCHIVOS DE CONFIGURACIÓN UNA VEZ ESTÉ INSTALADO EN EL SISTEMA
+CARPETAS/ARCHIVOS DE CONFIGURACIÓN ¡EN EL SISTEMA!
 ---------------------------------------------------------------
 </br> ~/.config/bspwm/      ===>
 </br> ~/.config/sxhkd/      ===>
