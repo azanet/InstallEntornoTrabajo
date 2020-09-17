@@ -22,6 +22,7 @@ INSTALACIÓN
 
 2-Clonar el repositorio </br>
    $ git clone https://github.com/azanet/InstallEntornoTrabajo.git
+   
 3-Accedemos dentro de la carpeta "InstallEntornoTrabajo" </br>
    $ cd InstallEntornoTrabajo
 
