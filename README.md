@@ -19,12 +19,12 @@ también cuenta con scripts personalizados
 
 CARPETAS/ARCHIVOS DE CONFIGURACIÓN UNA VEZ ESTÉ INSTALADO EN EL SISTEMA
 ---------------------------------------------------------------
-~/.config/bspwm/      ===>
-~/.config/sxhkd/      ===>
-~/.config/compton/    ===>
-~/.config/polybar/    ===>
-~/.config/bin/        ===>
-~/.xinitrc        ===>
-~/.zshrc          ===>
-~/.p10k.zsh       ===>
-/root/.p10k.zsh   ===>
+</br>~/.config/bspwm/      ===>
+</br>~/.config/sxhkd/      ===>
+</br>~/.config/compton/    ===>
+</br>~/.config/polybar/    ===>
+</br>~/.config/bin/        ===>
+</br>~/.xinitrc        ===>
+</br>~/.zshrc          ===>
+</br>~/.p10k.zsh       ===>
+</br>/root/.p10k.zsh   ===>
