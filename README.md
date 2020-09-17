@@ -27,7 +27,7 @@ INSTALACIÓN
    $ cd InstallEntornoTrabajo
 
 4-Ejecutamos el archivo "Install.sh" </br>
-   $ ./InstaLL.sh
+   $ ./Install.sh
 
 5-Comenzará la instalación, y habrá que interactuar un poco, muy poco..
 
