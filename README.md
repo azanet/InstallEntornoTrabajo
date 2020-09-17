@@ -15,7 +15,27 @@ un entorno de trabajo para linux estilo "tilling".
 Está constituido por "bspwm", "sxhkd", "polybar", "compton", "zsh", "powerlevel10k", "tmux", "i3lock-fancy"
 también cuenta con scripts personalizados
 
+INSTALACIÖN
+------------
+1- Nos situamos en nuestro directorio "HOME"
+   $ cd $HOME 
 
+2-Clonar el repositorio 
+   $ git clone http........
+
+3-Accedemos dentro de la carpeta "InstallEntornoTrabajo"
+   $ cd InstallEntornoTrabajo
+
+4-Ejecutamos el archivo "Install.sh"
+   $ ./InstaLL.sh
+
+5-Comenzará la instalación, y habrá que interactuar un poco, muy poco..
+
+6-Una vez finalice la instalación, habrá que establecer alguna fuente "Hack Nerd Font" en las "Preferencias" de nuestro "TERMINAL"(consola o como quieran llamarlo).
+
+7-Procedemos a reiniciar el equipo.
+
+8-Al iniciar sesión, deberemos escoger la opción "bspwm" para poder comenzar a utilizar nuestro nuevo entorno de trabajo.
 
 CARPETAS/ARCHIVOS DE CONFIGURACIÓN ¡EN EL SISTEMA!
 ---------------------------------------------------------------
