@@ -15,18 +15,18 @@ un entorno de trabajo para linux estilo "tilling".
 Está constituido por "bspwm", "sxhkd", "polybar", "compton", "zsh", "powerlevel10k", "tmux", "i3lock-fancy"
 también cuenta con scripts personalizados
 
-INSTALACIÖN
+INSTALACIÓN
 ------------
-1- Nos situamos en nuestro directorio "HOME"
+1- Nos situamos en nuestro directorio "HOME"</br>
    $ cd $HOME 
 
-2-Clonar el repositorio 
+2-Clonar el repositorio </br>
    $ git clone http........
 
-3-Accedemos dentro de la carpeta "InstallEntornoTrabajo"
+3-Accedemos dentro de la carpeta "InstallEntornoTrabajo" </br>
    $ cd InstallEntornoTrabajo
 
-4-Ejecutamos el archivo "Install.sh"
+4-Ejecutamos el archivo "Install.sh" </br>
    $ ./InstaLL.sh
 
 5-Comenzará la instalación, y habrá que interactuar un poco, muy poco..
