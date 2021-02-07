@@ -9,14 +9,26 @@ fi
 
 #Almacenando Usuario y Grupo primario, se utilizarán para asignar los permisos más alante
 USUARIO=$(echo $USER)
-cd
+
 USUARIO_HOME=$(pwd)
 GRUPO=$(id -gn)
-dirbase=$(dirname $(echo $(readlink -f $0))) #tomara el directorio desde donde se ejecuta el script
-dir_base="$dirbase/InstallEntornoTrabajo"
-#echo "$dir_base"
-cd
+dir_base=$(dirname $(echo $(readlink -f $0))) #tomara el directorio desde donde se ejecuta el script
+#dir_base="$dirbase/InstallEntornoTrabajo"
 
+
+##Removiendo directorios que vamos a instalar por si existen
+rm -R -f ~/.config/bin
+rm -R -f ~/.config/sxhkd
+rm -R -f ~/.config/bspwm
+rm -R -f ~/.config/compton
+rm -R -f ~/.config/polybar
+rm -R -f ~/.tmux
+rm -f ~/.tmux.conf.local
+rm -R -f  ~/bspwm
+rm -R -f ~/sxhkd
+sudo rm -R -f /root/.tmux
+sudo rm -f /root/.tmux.conf.local
+sudo rm -R -f /opt/polybar
 
 #Instalando las dependencias necesarias[bspwm,comton,feh,rofi,tmux,scrub,zsh,plugins-zsh,i3lock]
 echo "\nInstalando GIT..."
@@ -65,7 +77,7 @@ if [ "$(echo $?)" != "0" ]; then
         exit 1
 fi
 
-$(sudo apt install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y >&~/LOG_DE_ERRORES_INSTALACION.txt)
+$(sudo apt install dpkg libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y >&~/LOG_DE_ERRORES_INSTALACION.txt)
 if [ "$(echo $?)" != "0" ]; then
         echo -e "\e[1;31m\nSe produjo un error, revise las lineas anteriores y vuelva a intentarlo\e[0m"
         exit 1
@@ -156,7 +168,11 @@ cd
 echo "\nPolybar Instalada!\n"
 
 ##Instalando SCRUB ##
-sudo apt install scrub -y
+sudo apt install scrub -ysudo chown $USUARIO:$USUARIO -R ~/.config/bin
+sudo chown $USUARIO:$USUARIO -R ~/.config/sxhkd
+sudo chown $USUARIO:$USUARIO -R ~/.config/bspwm
+sudo chown $USUARIO:$USUARIO -R ~/.config/compton
+sudo chown $USUARIO:$USUARIO -R ~/.config/polybar
 if [ "$(echo $?)" != "0" ]; then
         echo -e "\e[1;31m\nSe produjo un error, revise las lineas anteriores y vuelva a intentarlo\e[0m"
         exit 1
