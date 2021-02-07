@@ -56,7 +56,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Manual configuration -----CONFIGURACION DEL PATH-------
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/netbeans/bin:/usr/local/sbin:/usr/sbin:/sbin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/netbeans/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/davidf/.local/bin:/home/davidf/.dotnet
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -139,6 +139,24 @@ function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
 }
+
+
+
+##SUSPENDER,REINICIAR,APAGAR
+function duerme(){
+	systemctl suspend
+}
+
+
+function banban(){
+	shutdown -r now
+}
+
+
+function muete(){
+        shutdown -P now
+}
+
 
 # Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize

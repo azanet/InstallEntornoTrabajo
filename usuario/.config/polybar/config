@@ -19,7 +19,7 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #aa2F343F
-#background = #222
+;background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -27,18 +27,22 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+test= #1ee4ae
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-2}
-#;monitor = ${env:MONITOR:eDP-1}
+#;monitor = HDMI-2
+monitor = ${env:MONITOR:}
+#;monitor-fallback = eDP-1
+#;monitor-strict = false
+#;monitor-exact = true
+
 width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 5.0
-fixed-center = false
-
-
+fixed-center = true
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -54,7 +58,68 @@ padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
-module-margin-top = 6
+module-margin-top = 0
+
+font-0 = fixed:pixelsize=10;4
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;3
+font-2 = siji:pixelsize=10;1
+font-3 = Hack Nerd Font Mono:pixelsize=20;5
+
+modules-left = bspwm i3
+;#modules-center = mpd
+modules-center = xwindow
+modules-right = torstatus vpn wifi ethernet alsa date memory battery_status
+;#modules-right = filesystem xbacklight alsa  pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+
+[bar/example2]
+monitor = eDP-1
+#;monitor = ${env:MONITOR:}
+monitor-strict = false
+monitor-exact = true
+
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 5.0
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+#;4
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+module-margin-top = 0
 
 font-0 = fixed:pixelsize=10;4
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;3
@@ -72,7 +137,7 @@ tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -84,6 +149,7 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -120,7 +186,7 @@ type = internal/bspwm
 
 label-focused = 
 label-focused-background = ${colors.background-alt}
-#label-focused-underline= ${colors.primary}
+;#label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = 
@@ -223,7 +289,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = #ffb18a
-#format-underline = #4bffdc
+;#format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -232,7 +298,7 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-#format-connected-underline = #9f78e1
+;#format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
@@ -276,7 +342,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = #aaA77CDE
-#format-underline = #0a6cf5
+;#format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -342,14 +408,14 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-#format-charging-underline = #ffb52a
+;#format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-#format-discharging-underline = ${self.format-charging-underline}
+;#format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-#format-full-underline = ${self.format-charging-underline}
+;#format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -430,7 +496,7 @@ margin-bottom = 5
 
 ; vim:ft=dosini
 
-##MODULOS CREADOS
+;##MODULOS CREADOS
 [module/ethernet]
 type = custom/script
 interval = 2

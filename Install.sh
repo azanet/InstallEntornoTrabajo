@@ -78,7 +78,7 @@ git clone https://github.com/baskerville/sxhkd.git
 
 echo -e "\nCOMPILANDO e Instalando bspwm y sxhkd..."
 
-cd bspwm && sudo make && sudo make install
+cd bspwm && sudo make && sudo make installindice con 
 cd ../sxhkd && sudo make && sudo make install
 cd
 #######FIN DE LA INSTALACION DE bspwm ##
@@ -165,7 +165,7 @@ fi
 
 ##Instalando Fuente: -Hack Nerd Font- (Se encuentra ya descargada en la carpeta)##
 cd /usr/local/share/fonts
-sudo cp $dir_base/Hack_Nerd_Font.zip .
+sudo cp $dir_base/Hack_Nerd_Font.zip ./
 
 sudo 7z x Hack_Nerd_Font.zip
 
@@ -197,7 +197,7 @@ sudo usermod --shell $RUTA root
 ##FIN de Instalacion de ZSH y POWERLEVEL10k##
 
 ##Instalando LSD y BAT (que ya estan descargados)
-sudo dpkg -i $dir_base/lsd_0.14.0_amd64.deb
+sudo dpkg -i $dir_base/lsd_0.19.0_amd64.deb
 
 sudo dpkg -i $dir_base/bat_0.15.4_amd64.deb
 
@@ -315,6 +315,6 @@ sudo chown root:root /usr/local/share/zsh/site-functions/_bspc
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
 chmod +x ~/.config/bin/*
-
+cp -r $dir_base/Logo_Azanet.png ~/
 
 echo -e "\n\n\nINSTALACIÓN FINALIZADA.\n\nDebe dirigirse a la 'Configuracion' de su Terminal\nY establecer 'Hack Nerd Font Mono Regular' como FUENTE Predeterminada."

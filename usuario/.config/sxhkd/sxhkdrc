@@ -18,10 +18,30 @@ super + Escape
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+#quit/restart bspwm ORIGINAL
+#super + alt + {q,r}
+#	bspc {quit,wm -r}
 
+#quit bspwm 
+super + alt + q
+       bspc quit
+
+
+#Encender TODAS las pantallas 
+ctrl + super + alt + r
+        ~/.config/sxhkd/scripts/set_on_all_monitors
+
+
+#Apagar PantallaIntegrada del portatil
+ctrl + super + alt + p
+        ~/.config/sxhkd/scripts/set_only_hdmi2_monitor
+		
+
+#Encender PantallaIntegrada del portatil y Apagar la salida HDMI
+ctrl + super + alt + o
+        ~/.config/sxhkd/scripts/set_only_edp1_monitor
+	 
+	
 # close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
@@ -136,6 +156,15 @@ alt + super + {Left,Down,Up,Right}
 # ---------------------------------------------
 ###ATAJOS para "APLICACIONES"###
 ##
+
+#Iniciar SIGNAL (signal-desktop instalado con snap)
+super + shift + s
+	snap run signal-desktop
+
+#Navegador de carpetas
+super + shift + h
+        caja
+
 #Firefox
 super + shift + f
 	firefox-esr
@@ -160,13 +189,7 @@ ctrl + super + alt +x
 
 ###ATAJOS para "CONFIGURACIONES"###
 ##
-#Apagar PantallaIntegrada del portatil
-ctrl + super + alt + p
-	xrandr --output eDP-1 --off
-#Encender PantallaIntegrada del portatil y Apagar la salida HDMI
-ctrl + super + alt + o
-	xrandr --output HDMI-2 --off --output eDP-1 --primary --mode 1366x768 --rotate normal
-        
+	        
 #Configuracion de audio
 ctrl + super + alt + a
 	mate-volume-control
@@ -181,6 +204,20 @@ ctrl + super + alt + b
 	mate-power-preferences
 
 
+#Configurando atajos de audio para el teclado mecanico MK5
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+XF86AudioMute
+	amixer set Master mute
+
+XF86Tools
+	amixer set Master unmute
+
 #Ejecutar el siguiente comando en consola para averiguar la/las teclas pulsadas y poder utilizarlas
 #  xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+
 

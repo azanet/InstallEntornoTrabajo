@@ -35,8 +35,7 @@ else
 		fi
 
 	elif [ "$STATE" = "fully-charged" ]; then
-                echo "%{F#18f714}%{F#e2ee6a}%{u-}"
-
+		echo "%{F#18f714}%{F#e2ee6a}%{u-}"
 	fi
 
 

@@ -1,52 +1,37 @@
 #! /bin/sh
 
+
 ##Eliminando las reglas existentes
 bspc rule -r "*"
-killall "nm-applet" &
-killall "polybar" &
 
 #Configurando LAS PANTALLAS MULTIPLES
 
+#hdmi_monitor=$(xrandr -q | grep " connected" | grep "HDMI-2" | cut -d ' ' -f1)
 hdmi_monitor=$(xrandr --listactivemonitors | awk "/HDMI-2/" | awk '{print $4}')
 edp_monitor=$(xrandr --listactivemonitors | awk "/eDP-1/" | awk '{print $4}')
 
-if [ -n "$hdmi_monitor" ] && [ -n "$edp_monitor" ]; then
-    xrandr --output HDMI-2 --primary --auto --left-of eDP-1 --rotate normal --output eDP-1 --auto --rotate normal &
+if [ "$hdmi_monitor" = "HDMI-2" ] && [ "$edp_monitor" = "eDP-1" ]; then
+   xrandr --output HDMI-2 --primary --mode 1920x1080i --left-of eDP-1 --rotate normal --output eDP-1 --mode 1366x768 --rotate normal
+   #xrandr --output DP-1 --primary --mode 1600x900 --left-of eDP-1 --rotate normal --output eDP-1 --mode 1366x768 --rotate normal --output DP-1 --off --output HDMI-1 --off
 fi
 
-sleep 3 &
-
+sleep 3
+killall "nm-applet"
 #Iniciando SXHKD (Controla los atajos del teclado)
 sxhkd &
 
 #Configurando Transparencias de utilidades (procesos del sistema que ejecutemos)
-#He deshabilitado las transparencias
-#  compton --config ~/.config/compton/compton.conf &
-
+compton --config ~/.config/compton/compton.conf &
 #Arreglo para JAVA
 wmname LG3D &
 
-#Seteando FONDO DE ESCRITORIO
-#feh --bg-scale --no-fehbg ~/Imágenes/culturagreen.jpg &
-feh --bg-fill ~/Frase_logo_Azanet.png &
 
 #Iniciando Polybar
 ~/.config/polybar/launch.sh &
 
-#SETEANDO LAS POLIBARs Según los monitores existentes
-
-if [ -n "$hdmi_monitor" ] && [ -n "$edp_monitor" ]; then
-    bspc monitor HDMI-2 -d I II III IV V VI VII
-    bspc monitor eDP-1 -d VIII IX X XII
-else
-    if [ -n "$hdmi_monitor" ]; then
-        bspc monitor HDMI-2 -d I II III IV V VI VII VIII IX X XI
-    fi
-
-    if [ -n "$edp_monitor" ]; then
-        bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X XI
-    fi
-fi
+#Seteando FONDO DE ESCRITORIO
+feh --bg-scale --no-fehbg ~/Imágenes/culturagreen.jpg &
+#feh --bg-fill ~/Imágenes/culturagreen.jpg &
 
 
 
@@ -60,6 +45,20 @@ nm-applet &
 bspc config pointer_modifier mod1
 
 
+
+
+#SETEANDO LAS POLIBARs Según los monitores existentes
+
+if [ "$hdmi_monitor" = "HDMI-2" ] && [ "$edp_monitor" = "eDP-1" ]; then
+   bspc monitor HDMI-2 -d I II III IV V VI VII
+   bspc monitor eDP-1 -d  VIII IX X XII
+else
+   bspc monitor HDMI-2 -d I II III IV V VI VII VIII IX X XI
+   bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X XI
+fi
+
+
+
 bspc config border_width         2
 bspc config window_gap           5
 bspc config split_ratio          0.52
@@ -67,8 +66,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 ##CONFIGuraciones en modo de pruebas
-bspc config remove_disabled_monitors true
-bspc config remove_unplugged_monitors true 
+#bspc config remove_disabled_monitors true
+#bspc config remove_unplugged_monitors true 
 
 bspc config normal_border_color     "#454747"
 bspc config active_border_color     "#74c2c2"

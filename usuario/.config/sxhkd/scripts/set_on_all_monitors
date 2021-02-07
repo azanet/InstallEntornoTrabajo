@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xrandr --output HDMI-2 --primary --auto --left-of eDP-1 --rotate normal --output eDP-1 --auto --rotate normal &
+bspc wm -r
