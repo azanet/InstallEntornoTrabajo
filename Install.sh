@@ -168,11 +168,8 @@ cd
 echo "\nPolybar Instalada!\n"
 
 ##Instalando SCRUB ##
-sudo apt install scrub -ysudo chown $USUARIO:$USUARIO -R ~/.config/bin
-sudo chown $USUARIO:$USUARIO -R ~/.config/sxhkd
-sudo chown $USUARIO:$USUARIO -R ~/.config/bspwm
-sudo chown $USUARIO:$USUARIO -R ~/.config/compton
-sudo chown $USUARIO:$USUARIO -R ~/.config/polybar
+sudo apt install scrub -y
+
 if [ "$(echo $?)" != "0" ]; then
         echo -e "\e[1;31m\nSe produjo un error, revise las lineas anteriores y vuelva a intentarlo\e[0m"
         exit 1

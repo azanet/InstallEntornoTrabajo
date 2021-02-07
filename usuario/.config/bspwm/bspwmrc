@@ -28,7 +28,7 @@ wmname LG3D &
 
 #Seteando FONDO DE ESCRITORIO
 #feh --bg-scale --no-fehbg ~/Imágenes/culturagreen.jpg &
-feh --bg-fill ~/Frase_logo_Azanet.png &
+feh --bg-fill ~/Logo_Azanet.png &
 
 #Iniciando Polybar
 ~/.config/polybar/launch.sh &
