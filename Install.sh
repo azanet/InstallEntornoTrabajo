@@ -10,7 +10,7 @@ fi
 #Almacenando Usuario y Grupo primario, se utilizarán para asignar los permisos más alante
 USUARIO=$(echo $USER)
 
-USUARIO_HOME=$(pwd)
+USUARIO_HOME=$(echo $HOME)
 GRUPO=$(id -gn)
 dir_base=$(dirname $(echo $(readlink -f $0))) #tomara el directorio desde donde se ejecuta el script
 #dir_base="$dirbase/InstallEntornoTrabajo"
