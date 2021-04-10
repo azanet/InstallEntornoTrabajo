@@ -10,7 +10,7 @@ también explica sin ningún desperdicio como manejarse en este entorno:</br>
  
 Este repositorio contiene los archivos necesarios
 para la automatización de la instalación de
-un entorno de trabajo para linux estilo "tilling".
+un entorno de trabajo "tiling "para Linux.
 Está constituido por "bspwm", "sxhkd", "polybar", "compton", "zsh", "powerlevel10k", "tmux", "i3lock-fancy"
 también cuenta con scripts personalizados
 
