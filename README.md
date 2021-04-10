@@ -1,4 +1,4 @@
-# InstallEntornoTrabajo
+# InstallEntornoTrabajo Linux
 
 <p>Ante todo dar créditos e indicar que todo el proceso de instalación 
 está basado en dos videos del GRAN tito "s4vitar" en los cuales
